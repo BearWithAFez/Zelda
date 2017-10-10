@@ -105,9 +105,93 @@ mapDict['playerAttack'] = {
 };
 
 // Player
-mapDict['player'] = {
+mapDict['playerD1'] = {
 	x: 4,
 	y: 548,
+
+	width: 64,
+	height: 64,
+
+	shape: 'rect',
+	type: 'player',
+	color: 'blue'
+};
+
+mapDict['playerD2'] = {
+	x: 4,
+	y: 616,
+
+	width: 64,
+	height: 64,
+
+	shape: 'rect',
+	type: 'player',
+	color: 'blue'
+};
+
+mapDict['playerL1'] = {
+	x: 72,
+	y: 548,
+
+	width: 64,
+	height: 64,
+
+	shape: 'rect',
+	type: 'player',
+	color: 'blue'
+};
+
+mapDict['playerL2'] = {
+	x: 72,
+	y: 616,
+
+	width: 64,
+	height: 64,
+
+	shape: 'rect',
+	type: 'player',
+	color: 'blue'
+};
+
+mapDict['playerU1'] = {
+	x: 140,
+	y: 548,
+
+	width: 64,
+	height: 64,
+
+	shape: 'rect',
+	type: 'player',
+	color: 'blue'
+};
+
+mapDict['playerU2'] = {
+	x: 140,
+	y: 616,
+
+	width: 64,
+	height: 64,
+
+	shape: 'rect',
+	type: 'player',
+	color: 'blue'
+};
+
+mapDict['playerR1'] = {
+	x: 208,
+	y: 548,
+
+	width: 64,
+	height: 64,
+
+	shape: 'rect',
+	type: 'player',
+	color: 'blue'
+};
+
+mapDict['playerR2'] = {
+	x: 208,
+	y: 616,
 
 	width: 64,
 	height: 64,

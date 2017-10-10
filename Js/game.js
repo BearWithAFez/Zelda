@@ -68,7 +68,6 @@
 	// Component constructor (Arg needs x, y, code, optional extraVars)
 	function component(arg) {
 		this.extraVars = arg.extraVars || {};
-
 		this.type = mapDict[arg.code].type || '???';
 		this.shape = mapDict[arg.code].shape || '???';
 		this.code = arg.code || '???';
@@ -90,8 +89,8 @@
 			ctx.translate(this.x, this.y);
 			ctx.fillStyle = this.color;
 
+			// Non-sprite
 			/*
-			// Non-sprites
 			switch (this.shape) {
 				case 'triTL':
 					ctx.beginPath();
@@ -135,7 +134,31 @@
 			// Sprites
 			var s = mapDict[this.code];
 			switch (this.code) {
-				case 'player':
+				case 'playerD1':
+				case 'playerD2':
+				case 'playerL1':
+				case 'playerL2':
+				case 'playerR1':
+				case 'playerR2':
+				case 'playerU1':
+				case 'playerU2':
+					switch (this.extraVars.direction) {
+						case 'down':
+							s = mapDict[(parseInt(this.y / (BLOCKSIZE / 2)) % 2) === 1 ? 'playerD1' : 'playerD2'];
+							break;
+
+						case 'up':
+							s = mapDict[(parseInt(this.y / (BLOCKSIZE / 2)) % 2) === 1 ? 'playerU1' : 'playerU2'];
+							break;
+
+						case 'right':
+							s = mapDict[(parseInt(this.x / (BLOCKSIZE / 2)) % 2) === 1 ? 'playerR1' : 'playerR2'];
+							break;
+
+						case 'left':
+							s = mapDict[(parseInt(this.x / (BLOCKSIZE / 2)) % 2) === 1 ? 'playerL1' : 'playerL2'];
+							break;
+					}
 					ctx.drawImage(
 						// src
 						spr,
@@ -399,7 +422,7 @@
 
 		// Player stuff
 		player = new component({
-			code: 'player',
+			code: 'playerD1',
 			x: PLYR_INT.x * BLOCKSIZE,
 			y: PLYR_INT.y * BLOCKSIZE,
 			extraVars: {
