@@ -1,0 +1,15 @@
+canvas{
+	background-color: #ffc07a;
+}
+body{
+	text-align: center;
+	background-color: black;
+	margin-top: 50px;
+}
+p{
+	color: orange;
+	font-family: helvetica;
+}
+.invis{
+	display: none;
+}
