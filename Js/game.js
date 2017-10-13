@@ -14,6 +14,8 @@
 		y: 7
 	};
 
+	var curMap = map1;
+
 	/*** Global vars ***/
 	var screenObjects = [];
 	var player;
@@ -403,17 +405,17 @@
 	// Upon complete page load
 	window.addEventListener('load', function() {
 		// Canvas stuff
-		myGameArea.start(map1[0].length, map1.length);
+		myGameArea.start(curMap[0].length, curMap.length);
 
 		// Map stuff
-		for (var i = 0; i < map1.length; i++) {
-			for (var j = 0; j < map1[i].length; j++) {
+		for (var i = 0; i < curMap.length; i++) {
+			for (var j = 0; j < curMap[i].length; j++) {
 				// Empty
-				if (map1[i][j] === '') continue;
+				if (curMap[i][j] === '') continue;
 
 				// Otherwise add
 				screenObjects.push(new component({
-					code: map1[i][j],
+					code: curMap[i][j],
 					x: j * BLOCKSIZE,
 					y: i * BLOCKSIZE
 				}));
